@@ -134,6 +134,16 @@ internal class Program
     {
         try
         {
+            // Create a new instance of EnvironmentCreationOptions
+            EnvironmentCreationOptions envOptions = new()
+            {
+                logId = "ResnetDemo",
+                logLevel = OrtLoggingLevel.ORT_LOGGING_LEVEL_ERROR
+            };
+
+            // Pass the options by reference to CreateInstanceWithOptions
+            OrtEnv ortEnv = OrtEnv.CreateInstanceWithOptions(ref envOptions);
+
             // Use WinML to download and register Execution Providers
             Microsoft.Windows.AI.MachineLearning.Infrastructure infrastructure = new();
             Console.WriteLine("Ensure EPs are downloaded ...");
