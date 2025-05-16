@@ -2,7 +2,7 @@
 * Python 3.10 - 3.13 on Windows
 * Download model file
 ```PowerShell
-..\DownloadModel.ps1
+..\Download-Model.ps1
 ```
 * Install dependencies
 ```PowerShell
