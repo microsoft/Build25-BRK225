@@ -21,7 +21,7 @@ def load_labels(label_file):
         labels = [line.strip().split(',')[1] for line in f.readlines()]
     return labels
 
-def print_results(lables, results, is_logit=False):
+def print_results(labels, results, is_logit=False):
     def softmax(x):
         exp_x = np.exp(x - np.max(x))
         return exp_x / exp_x.sum()
@@ -36,7 +36,7 @@ def print_results(lables, results, is_logit=False):
     print("-"*50)
     
     for i in top_indices:
-        print(f"{lables[i]:<32} {results[i]*100:>10.2f}%")
+        print(f"{labels[i]:<32} {results[i]*100:>10.2f}%")
     
     print("-"*50)
 

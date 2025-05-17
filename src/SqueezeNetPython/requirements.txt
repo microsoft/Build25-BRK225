@@ -2,4 +2,5 @@
 --extra-index-url https://pypi.org/simple
 
 pillow
+numpy
 onnxruntime-winml
