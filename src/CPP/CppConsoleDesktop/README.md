@@ -9,12 +9,14 @@ This sample demonstrates how to use ONNX Runtime in a C++ desktop application, f
 ## Command-line Usage
 
 ```
-CppConsoleDesktop.exe [options] <image_path>
+CppConsoleDesktop.exe [options]
 Options:
+  --ep_policy <policy>  Set execution provider policy (NPU, CPU, GPU, DEFAULT, DISABLE). Default: DISABLE
   --compile            Compile the model
   --download           Download required packages
   --model <path>       Path to input ONNX model (default: SqueezeNet.onnx in executable directory)
-  --output <path>      Path for compiled output model
+  --compiled_output <path>      Path for compiled output model (default: SqueezeNet_ctx.onnx)
+  --image_path <path>           Path to the input image (default: image.jpg in the executable directory)
 ```
 
 ## Key Features
@@ -26,17 +28,39 @@ The sample demonstrates how to discover available execution providers and config
 ```cpp
 #include <win_onnxruntime_cxx_api.h>
 
-// Get all available EP devices from the environment
-std::vector<Ort::ConstEpDevice> ep_devices = env.GetEpDevices();
+  // Accumulate devices by ep_name
+  // Passing all devices for a given EP in a single call allows the execution provider
+  // to select the best configuration or combination of devices, rather than being limited
+  // to a single device. This enables optimal use of available hardware if supported by the EP.
+  std::unordered_map<std::string, std::vector<Ort::ConstEpDevice>> ep_device_map;
+  for (const auto& device : ep_devices)
+  {
+      ep_device_map[device.EpName()].push_back(device);
+  }
+  std::wcout << L"Execution Provider Information:\n";
+  std::wcout << L"-------------------------------------------------------------\n";
+  std::wcout << std::left << std::setw(32) << L"Provider" << std::setw(16) << L"Vendor" << std::setw(12)
+              << L"Device Type" << std::endl;
+  std::wcout << L"-------------------------------------------------------------\n";
+  for (const auto& [ep_name, devices] : ep_device_map)
+  {
+      std::cout << std::left << std::setw(32) << ep_name;
+      for (const auto& device : devices)
+      {
+          std::cout << std::setw(16) << device.EpVendor() << std::setw(12) << ToString(device.Device().Type())
+                      << std::endl;
+      }
+  }
 
 // Configure and add each EP with appropriate options
-for (const auto& device : ep_devices) {
-    std::string ep_name = device.EpName();
+for (const auto& [ep_name, devices] : ep_device_map)
+{
     Ort::KeyValuePairs ep_options;
-    
-    if (ep_name == "QNNExecutionProvider") {
-        ep_options.Add("htp_performance_mode", "high_performance");
-        session_options.AppendExecutionProvider_V2(env, {device}, ep_options);
+    if (ep_name == "VitisAIExecutionProvider")
+    {
+        // Append the Vitis AI EP
+        session_options.AppendExecutionProvider_V2(env, devices, ep_options);
+        std::cout << "Successfully added " << ep_name << " EP" << std::endl;
     }
     // ... other providers
 }
