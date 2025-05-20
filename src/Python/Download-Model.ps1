@@ -1,3 +1,6 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License. See LICENSE.md in the repo root for license information.
+
 # Create the model folder
 $targetPath = Join-Path $PSScriptRoot 'Model'
 if (-not (Test-Path $targetPath -PathType Container)) {
