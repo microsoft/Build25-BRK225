@@ -1,3 +1,7 @@
+<p align="center">
+<img src="img/banner.jpg" alt="decorative banner" width="1200"/>
+</p>
+
 # Build25 BRK225 - Bring your own model to Windows using Windows ML Runtime
 
 ## Description
@@ -8,9 +12,9 @@ This repo shows you how to use Windows ML in csharp, cpp and python. It contains
 
 ## Content Owners
 
-Xiaoxi Han, Senior Software Engineer
-
 Ryan Demopoulos, Principal Product Manager
+
+Xiaoxi Han, Senior Software Engineer
 
 ## Session Resources 
 

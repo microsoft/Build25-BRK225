@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "CSharpConsoleDesktop": {
-      "commandName": "Project",
-      "commandLineArgs": "--compile --download"
-    }
-  }
-}
