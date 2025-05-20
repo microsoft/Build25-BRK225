@@ -8,9 +8,8 @@ This repo shows you how to use Windows ML in csharp, cpp and python. It contains
 
 ## Content Owners
 
-Add Speaker name(s) and titles (required)
-Add your likeness (optional)
 Xiaoxi Han, Senior Software Engineer
+
 Ryan Demopoulos, Principal Product Manager
 
 ## Session Resources 
@@ -19,7 +18,7 @@ Ryan Demopoulos, Principal Product Manager
 |:-------------------|:----------------------------------|:-------------------|
 | Build session page | https://build.microsoft.com/sessions/BRK225 | Event session page with downloadable recording, slides, resources, and speaker bio |
 | Session recording on YouTube | https://aka.ms/build2025/video/BRK225 | YouTube page with session recoding and speaker-moderated chat |
-|Microsoft Learn|aka.ms/build25/plans/friendlyname<br>aka.ms/build25/collection/friendlyname|Official Collection or Plan with skilling resources to learn at your own pace|
+|Microsoft Learn|aka.ms/TryWinML|Official Collection or Plan with skilling resources to learn at your own pace|
 
 
 ## Contributing

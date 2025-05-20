@@ -167,10 +167,10 @@ Here's an example of the kind of output to be expected.
 -------------------------------------------
 Label                            Confidence
 -------------------------------------------
-golden retriever                     99.97%
-doormat                               0.00%
-Gordon setter                         0.00%
-Labrador retriever                    0.00%
-tennis ball                           0.00%
+French bulldog                       45.07%
+bull mastiff                         35.05%
+boxer                                 2.85%
+pug                                   1.01%
+American Staffordshire terrier        0.57%
 -------------------------------------------
 ```
