@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices.WindowsRuntime;
+﻿using System.Reflection;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
 using Windows.Graphics.Imaging;
@@ -137,7 +138,7 @@ internal class Program
             // Create a new instance of EnvironmentCreationOptions
             EnvironmentCreationOptions envOptions = new()
             {
-                logId = "ResnetDemo",
+                logId = "ResnetBuildDemo",
                 logLevel = OrtLoggingLevel.ORT_LOGGING_LEVEL_ERROR
             };
 
@@ -151,11 +152,13 @@ internal class Program
             await infrastructure.RegisterExecutionProviderLibrariesAsync();
 
             // Prepare paths
-            string modelPath = @"C:\Users\xiha\Downloads\drop_BuildWCR_Build (1)\drop_BuildWCR_Build\partner_drop\samples\CSharpConsoleDesktop\CSharpConsoleDesktop\SqueezeNet.onnx";
-
-            //string modelPath = @"C:\Build\model\ov_model.onnx";
-            string labelsPath = @"C:\Build\Assets\ResNet50Labels.txt";
-            string imagePath = @"C:\Build\Assets\cat.jpg";
+            string executableFolder = Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)!;
+            string labelsPath = Path.Combine(executableFolder, "ResNet50Labels.txt");
+            string imagePath = Path.Combine(executableFolder, "dog.jpg");
+            
+            // TODO: Please use AITK Model Conversion tool to download and convert Resnet, and paste the converted path here
+            string modelPath = @"";
+            string compiledModelPath = @"";
 
             //Create Onnx session
             Console.WriteLine("Creating session ...");
@@ -164,7 +167,6 @@ internal class Program
             sessionOptions.SetEpSelectionPolicy(ExecutionProviderDevicePolicy.MIN_OVERALL_POWER);
 
             // Compile the model if not already compiled
-            string compiledModelPath = @"C:\Build\compiled_model\model.onnx";
             bool isCompiled = File.Exists(compiledModelPath);
             if (!isCompiled)
             {
