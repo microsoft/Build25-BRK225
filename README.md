@@ -10,6 +10,8 @@ Windows ML empowers you to bring your own model, or pick from our growing Foundr
 
 This repo shows you how to use Windows ML in csharp, cpp and python. It contains the ResnetBuildDemo app that we showed in our demo, and a couple of other cs, cpp and python samples.
 
+Before running any csharp and cpp sample app, please visit [Windows ML - Distributing your app](https://learn.microsoft.com/en-us/windows/ai/new-windows-ml/distributing-your-app) to learn about required steps to install Windows ML Runtime on your machine. In summary, you can either create an installer that uses WinML's Bootstrap functionality to deploy the Runtime package, or use winget to provision the Windows ML Runtime package on your current device. Python sample does not require additional setup steps.
+
 ## Content Owners
 
 Ryan Demopoulos, Principal Product Manager
@@ -22,8 +24,7 @@ Xiaoxi Han, Senior Software Engineer
 |:-------------------|:----------------------------------|:-------------------|
 | Build session page | https://build.microsoft.com/sessions/BRK225 | Event session page with downloadable recording, slides, resources, and speaker bio |
 | Session recording on YouTube | https://aka.ms/build2025/video/BRK225 | YouTube page with session recoding and speaker-moderated chat |
-|Microsoft Learn|aka.ms/TryWinML|Official Collection or Plan with skilling resources to learn at your own pace|
-
+|Microsoft Learn|https://aka.ms/TryWinML|Official Collection or Plan with skilling resources to learn at your own pace|
 
 ## Contributing
 
