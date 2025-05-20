@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT License. See LICENSE.md in the repo root for license information.#include <filesystem>
+// Licensed under the MIT License. See LICENSE.md in the repo root for license information.
+#include <filesystem>
 #include <Unknwn.h>
 #include <winrt/base.h>
 #include <winrt/Windows.Foundation.h>
