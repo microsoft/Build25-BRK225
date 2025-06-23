@@ -43,7 +43,7 @@ bool ParseCommandLineArgs(int argc, wchar_t* argv[], CommandLineOptions& options
 {
     std::vector<std::wstring_view> arguments{argv, argv + argc};
 
-    if (arguments.size() < 1)
+    if (arguments.size() < 2)
     {
         std::wcout
             << L"Usage: CppConsoleDesktop.exe [options]\n"
