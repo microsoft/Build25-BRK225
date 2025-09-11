@@ -4,6 +4,13 @@
 
 # Build25 BRK225 - Bring your own model to Windows using Windows ML Runtime
 
+## Thanks for attending Microsoft Build 2025!
+
+*This repository is now read-only.  Stay up to date with Microsoft and AI at [https://learn.microsoft.com/ai](https://learn.microsoft.com/ai?wt.mc_id=aihub_Build25DevActions_github_cnl).*
+
+
+For latest Windows ML samples, please visit [WindowsAppSDK WindowsML Samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/WindowsML).
+
 ## Description
 
 Windows ML empowers you to bring your own model, or pick from our growing Foundry catalog, and helps you optimize your AI workload across CPU/GPU/NPU, all while streamlining model & runtime dependency management.
@@ -18,7 +25,7 @@ Ryan Demopoulos, Principal Product Manager
 
 Xiaoxi Han, Senior Software Engineer
 
-## Session Resources 
+## Session Resources
 
 | Resources          | Links                             | Description        |
 |:-------------------|:----------------------------------|:-------------------|
@@ -40,5 +47,5 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## Trademarks 
+## Trademarks
 This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow Microsoft’s Trademark & Brand Guidelines. Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party’s policies.
