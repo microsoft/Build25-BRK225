@@ -3,4 +3,4 @@
 
 pillow
 numpy
-onnxruntime-winml
+onnxruntime-winml; sys_platform == 'win32'
